@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  install_paper:
+    docker:
+      - image: debian:bullseye-20210902-slim
+    resource_class: medium
+    steps:
+      - run:
+          command: apt-get update && apt-get install -y libpaper1
+workflows:
+  version: 2
+  myworkflow:
+    jobs:
+      - install_paper
