@@ -6,7 +6,7 @@ jobs:
     resource_class: medium
     steps:
       - run:
-          command: apt-get update && apt-get install -y libpaper1
+          command: docker run -it debian:bullseye-20210902-slim sh -c 'apt-get update && apt-get install libpaper1'
 workflows:
   version: 2
   myworkflow:
