@@ -5,7 +5,8 @@ jobs:
       - image: debian:bullseye-20210902-slim
     resource_class: medium
     steps:
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: 20.10.7
       - checkout
       - run:
           command: ./build.sh
